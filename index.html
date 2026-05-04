@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kabir Hossain — Développeur IA en alternance. Ex-Head of Sales. Automatisation, LLM, Python, n8n.">
+  <meta property="og:title" content="Kabir Hossain — Développeur IA">
+  <meta property="og:description" content="Admis chez Simplon en Développeur IA (sept. 2026), recherchant une alternance 16 mois. Vision ROI + stack IA opérationnelle.">
+  <title>Kabir Hossain — Développeur IA</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300..700&display=swap" rel="stylesheet">
+
+  <style>
+    :root, [data-theme="light"] {
+      --color-bg: #f7f5f0;
+      --color-surface: #faf9f6;
+      --color-surface-2: #ffffff;
+      --color-surface-offset: #f0ece5;
+      --color-surface-offset-2: #e8e3da;
+      --color-divider: #dcd8d0;
+      --color-border: #d0cbc2;
+      --color-text: #1e1c18;
+      --color-text-muted: #6b6760;
+      --color-text-faint: #b0ada7;
+      --color-text-inverse: #f9f8f4;
+      --color-primary: #01696f;
+      --color-primary-hover: #0c4e54;
+      --color-primary-highlight: #cedcd8;
+      --radius-sm: 0.375rem;
+      --radius-md: 0.625rem;
+      --radius-lg: 1rem;
+      --radius-xl: 1.5rem;
+      --radius-full: 9999px;
+      --shadow-sm: 0 1px 3px oklch(0.2 0.01 80 / 0.07);
+      --shadow-md: 0 4px 16px oklch(0.2 0.01 80 / 0.09);
+      --shadow-lg: 0 12px 40px oklch(0.2 0.01 80 / 0.13);
+      --font-display: 'Instrument Serif', Georgia, serif;
+      --font-body: 'DM Sans', 'Helvetica Neue', sans-serif;
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+      --text-hero: clamp(2.5rem, 1rem + 5vw, 5rem);
+      --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem;
+      --space-4: 1rem; --space-6: 1.5rem; --space-8: 2rem;
+      --space-10: 2.5rem; --space-12: 3rem; --space-16: 4rem;
+      --transition: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    [data-theme="dark"] {
+      --color-bg: #141210;
+      --color-surface: #1a1916;
+      --color-surface-2: #1f1e1b;
+      --color-surface-offset: #242220;
+      --color-surface-offset-2: #2a2825;
+      --color-divider: #2e2c29;
+      --color-border: #3a3835;
+      --color-text: #d4d2ce;
+      --color-text-muted: #807e7a;
+      --color-text-faint: #5c5a57;
+      --color-primary: #4f98a3;
+      --color-primary-hover: #227f8b;
+      --color-primary-highlight: #253535;
+      --shadow-sm: 0 1px 3px oklch(0 0 0 / 0.25);
+      --shadow-md: 0 4px 16px oklch(0 0 0 / 0.35);
+      --shadow-lg: 0 12px 40px oklch(0 0 0 / 0.45);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; scroll-behavior: smooth; scroll-padding-top: var(--space-16); }
+    body { min-height: 100dvh; font-family: var(--font-body); font-size: var(--text-base); color: var(--color-text); background-color: var(--color-bg); line-height: 1.6; transition: background-color 0.3s ease, color 0.3s ease; }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; transition: color var(--transition); }
+    button { cursor: pointer; background: none; border: none; font: inherit; color: inherit; }
+    :focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; border-radius: var(--radius-sm); }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: oklch(from var(--color-bg) l c h / 0.85);
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--color-divider);
+      padding: var(--space-3) var(--space-6);
+      display: flex; align-items: center; justify-content: space-between;
+      transition: background 0.3s ease;
+    }
+    .nav-logo { display: flex; align-items: center; gap: var(--space-3); font-family: var(--font-display); font-size: var(--text-lg); font-weight: 400; letter-spacing: -0.01em; }
+    .nav-logo svg { color: var(--color-primary); flex-shrink: 0; }
+    .nav-links { display: flex; align-items: center; gap: var(--space-6); }
+    .nav-links a { font-size: var(--text-sm); color: var(--color-text-muted); font-weight: 500; transition: color var(--transition); }
+    .nav-links a:hover { color: var(--color-text); }
+    .nav-right { display: flex; align-items: center; gap: var(--space-3); }
+    .btn-nav-cta { background: var(--color-primary); color: #fff; padding: var(--space-2) var(--space-4); border-radius: var(--radius-full); font-size: var(--text-sm); font-weight: 600; transition: background var(--transition), transform var(--transition); }
+    .btn-nav-cta:hover { background: var(--color-primary-hover); transform: translateY(-1px); }
+    .theme-toggle { width: 36px; height: 36px; border-radius: var(--radius-full); background: var(--color-surface-offset); display: flex; align-items: center; justify-content: center; transition: background var(--transition); }
+    .theme-toggle:hover { background: var(--color-surface-offset-2); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; padding: var(--space-2); }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--color-text); border-radius: 2px; transition: all 0.3s; }
+
+    .hero { max-width: 1200px; margin-inline: auto; padding: clamp(var(--space-12), 8vw, var(--space-16)) var(--space-6); display: grid; grid-template-columns: 1fr auto; gap: var(--space-8); align-items: center; }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: var(--space-2); background: var(--color-primary-highlight); color: var(--color-primary); border-radius: var(--radius-full); padding: var(--space-1) var(--space-3); font-size: var(--text-xs); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: var(--space-4); }
+    .hero-eyebrow::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--color-primary); flex-shrink: 0; }
+    .hero h1 { font-family: var(--font-display); font-size: var(--text-hero); font-weight: 400; line-height: 1.08; letter-spacing: -0.02em; color: var(--color-text); margin-bottom: var(--space-4); }
+    .hero h1 em { font-style: italic; color: var(--color-primary); }
+    .hero-pitch { font-size: var(--text-base); color: var(--color-text-muted); max-width: 52ch; line-height: 1.7; margin-bottom: var(--space-6); }
+    .hero-actions { display: flex; align-items: center; gap: var(--space-3); flex-wrap: wrap; }
+    .btn-primary { background: var(--color-primary); color: #fff; padding: var(--space-3) var(--space-6); border-radius: var(--radius-full); font-size: var(--text-sm); font-weight: 600; transition: background var(--transition), transform var(--transition), box-shadow var(--transition); display: inline-flex; align-items: center; gap: var(--space-2); }
+    .btn-primary:hover { background: var(--color-primary-hover); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    .btn-secondary { background: var(--color-surface); color: var(--color-text); border: 1px solid var(--color-border); padding: var(--space-3) var(--space-6); border-radius: var(--radius-full); font-size: var(--text-sm); font-weight: 500; transition: background var(--transition), transform var(--transition); display: inline-flex; align-items: center; gap: var(--space-2); }
+    .btn-secondary:hover { background: var(--color-surface-offset); transform: translateY(-2px); }
+    .hero-photo-wrap { width: clamp(160px, 18vw, 260px); flex-shrink: 0; position: relative; }
+    .hero-photo-wrap::before { content: ''; position: absolute; inset: -6px; border-radius: calc(var(--radius-xl) + 6px); background: linear-gradient(135deg, var(--color-primary) 0%, transparent 60%); opacity: 0.18; z-index: 0; }
+    .hero-photo-wrap img { width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); position: relative; z-index: 1; }
+    .hero-social { display: flex; gap: var(--space-3); margin-top: var(--space-4); }
+    .hero-social a { width: 36px; height: 36px; border-radius: var(--radius-full); background: var(--color-surface-offset); display: flex; align-items: center; justify-content: center; color: var(--color-text-muted); transition: background var(--transition), color var(--transition), transform var(--transition); }
+    .hero-social a:hover { background: var(--color-primary); color: #fff; transform: translateY(-2px); }
+
+    .bento-section { max-width: 1200px; margin-inline: auto; padding: 0 var(--space-6) clamp(var(--space-12), 8vw, var(--space-16)); }
+    .section-label { font-size: var(--text-xs); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-text-faint); margin-bottom: var(--space-6); }
+    .bento-grid { display: grid; grid-template-columns: repeat(12, 1fr); grid-auto-rows: minmax(80px, auto); gap: var(--space-4); }
+
+    .bcard { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--space-6); box-shadow: var(--shadow-sm); transition: box-shadow var(--transition), transform var(--transition), border-color var(--transition); overflow: hidden; position: relative; }
+    .bcard:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); border-color: var(--color-primary-highlight); }
+    .bcard-label { font-size: var(--text-xs); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-faint); margin-bottom: var(--space-3); display: flex; align-items: center; gap: var(--space-2); }
+    .bcard-label svg { color: var(--color-primary); }
+
+    .bcard-alternance { grid-column: span 4; background: var(--color-primary); color: #fff; border-color: transparent; }
+    .bcard-alternance:hover { border-color: transparent; }
+    .bcard-stats { grid-column: span 5; }
+    .bcard-dispo { grid-column: span 3; background: var(--color-surface-offset); }
+    .bcard-projects { grid-column: span 7; }
+    .bcard-stack { grid-column: span 5; }
+    .bcard-exp { grid-column: span 12; }
+    .bcard-contact { grid-column: span 5; }
+    .bcard-github { grid-column: span 4; background: var(--color-surface-offset); }
+    .bcard-linkedin { grid-column: span 3; background: var(--color-primary); color: #fff; border-color: transparent; }
+    .bcard-linkedin:hover { border-color: transparent; }
+
+    .bcard-alternance .bcard-label { color: rgba(255,255,255,0.7); }
+    .bcard-alternance .alt-title { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 400; line-height: 1.2; margin-bottom: var(--space-2); }
+    .bcard-alternance .alt-sub { font-size: var(--text-xs); color: rgba(255,255,255,0.75); margin-bottom: var(--space-4); }
+    .alt-badge { display: inline-flex; align-items: center; gap: var(--space-2); background: rgba(255,255,255,0.18); border-radius: var(--radius-full); padding: var(--space-1) var(--space-3); font-size: var(--text-xs); font-weight: 600; }
+    .alt-badge::before { content:''; width:7px; height:7px; border-radius:50%; background:#4ade80; animation: pulse 2s ease infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.6;transform:scale(1.3)} }
+
+    .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); margin-top: var(--space-2); }
+    .stat-item { text-align: center; }
+    .stat-num { font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 400; color: var(--color-primary); line-height: 1; margin-bottom: var(--space-1); }
+    .stat-desc { font-size: var(--text-xs); color: var(--color-text-muted); line-height: 1.3; }
+
+    .dispo-status { display: flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-2); }
+    .dispo-dot { width: 10px; height: 10px; border-radius: 50%; background: #22c55e; flex-shrink: 0; animation: pulse 2s ease infinite; }
+    .dispo-text { font-size: var(--text-sm); font-weight: 600; color: var(--color-text); }
+    .dispo-detail { font-size: var(--text-xs); color: var(--color-text-muted); line-height: 1.5; }
+    .dispo-location { display: flex; align-items: center; gap: var(--space-1); margin-top: var(--space-3); font-size: var(--text-xs); color: var(--color-text-muted); }
+
+    .projects-list { display: flex; flex-direction: column; gap: var(--space-4); margin-top: var(--space-2); }
+    .project-item { border: 1px solid var(--color-divider); border-radius: var(--radius-lg); padding: var(--space-4); background: var(--color-surface-2); transition: border-color var(--transition), background var(--transition); }
+    .project-item:hover { border-color: var(--color-primary); background: var(--color-bg); }
+    .project-top { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--space-2); margin-bottom: var(--space-2); }
+    .project-name { font-weight: 700; font-size: var(--text-sm); color: var(--color-text); }
+    .project-link { display: inline-flex; align-items: center; gap: var(--space-1); font-size: var(--text-xs); color: var(--color-primary); font-weight: 600; background: var(--color-primary-highlight); padding: 2px var(--space-2); border-radius: var(--radius-full); flex-shrink: 0; transition: background var(--transition); }
+    .project-link:hover { background: var(--color-primary); color: #fff; }
+    .project-desc { font-size: var(--text-xs); color: var(--color-text-muted); line-height: 1.5; margin-bottom: var(--space-2); }
+    .project-tags { display: flex; flex-wrap: wrap; gap: var(--space-1); }
+    .tag { font-size: 0.7rem; font-weight: 600; padding: 2px 8px; border-radius: var(--radius-full); background: var(--color-surface-offset); color: var(--color-text-muted); letter-spacing: 0.02em; }
+
+    .stack-groups { display: flex; flex-direction: column; gap: var(--space-4); margin-top: var(--space-2); }
+    .stack-group-label { font-size: var(--text-xs); font-weight: 700; color: var(--color-text-faint); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: var(--space-2); }
+    .stack-chips { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+    .chip { font-size: var(--text-xs); font-weight: 600; padding: var(--space-1) var(--space-3); border-radius: var(--radius-full); background: var(--color-surface-offset); color: var(--color-text); border: 1px solid var(--color-divider); transition: background var(--transition), border-color var(--transition), color var(--transition); }
+    .chip:hover { background: var(--color-primary-highlight); border-color: var(--color-primary); color: var(--color-primary); }
+    .chip.highlight { background: var(--color-primary-highlight); border-color: var(--color-primary); color: var(--color-primary); }
+
+    .exp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); margin-top: var(--space-2); }
+    .exp-item { position: relative; padding-left: var(--space-6); }
+    .exp-item::before { content: ''; position: absolute; left: 0; top: 6px; width: 10px; height: 10px; border-radius: 50%; border: 2px solid var(--color-primary); background: var(--color-bg); }
+    .exp-item::after { content: ''; position: absolute; left: 4px; top: 20px; width: 2px; height: calc(100% - 16px); background: var(--color-divider); }
+    .exp-period { font-size: var(--text-xs); color: var(--color-primary); font-weight: 600; margin-bottom: var(--space-1); letter-spacing: 0.04em; }
+    .exp-role { font-weight: 700; font-size: var(--text-sm); color: var(--color-text); margin-bottom: var(--space-1); }
+    .exp-company { font-size: var(--text-xs); color: var(--color-text-muted); margin-bottom: var(--space-3); }
+    .exp-results { list-style: none; display: flex; flex-direction: column; gap: var(--space-2); }
+    .exp-results li { font-size: var(--text-xs); color: var(--color-text-muted); line-height: 1.5; display: flex; gap: var(--space-2); align-items: flex-start; }
+    .exp-results li::before { content: '→'; color: var(--color-primary); flex-shrink: 0; font-weight: 700; }
+
+    .contact-items { display: flex; flex-direction: column; gap: var(--space-3); margin-top: var(--space-2); }
+    .contact-item { display: flex; align-items: center; gap: var(--space-3); font-size: var(--text-sm); color: var(--color-text-muted); }
+    .contact-item svg { color: var(--color-primary); flex-shrink: 0; }
+    .contact-item a { color: var(--color-text); font-weight: 500; transition: color var(--transition); }
+    .contact-item a:hover { color: var(--color-primary); }
+
+    .github-content { display: flex; flex-direction: column; height: 100%; }
+    .github-handle { font-size: var(--text-sm); font-weight: 700; color: var(--color-text); margin-bottom: var(--space-2); }
+    .github-sub { font-size: var(--text-xs); color: var(--color-text-muted); margin-bottom: var(--space-4); flex: 1; }
+    .github-cta { display: inline-flex; align-items: center; gap: var(--space-2); font-size: var(--text-xs); font-weight: 700; color: var(--color-primary); background: var(--color-primary-highlight); border-radius: var(--radius-full); padding: var(--space-2) var(--space-3); transition: background var(--transition), color var(--transition); align-self: flex-start; }
+    .github-cta:hover { background: var(--color-primary); color: #fff; }
+
+    .bcard-linkedin .bcard-label { color: rgba(255,255,255,0.7); }
+    .li-title { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 400; margin-bottom: var(--space-2); }
+    .li-sub { font-size: var(--text-xs); color: rgba(255,255,255,0.75); margin-bottom: var(--space-4); }
+    .li-cta { display: inline-flex; align-items: center; gap: var(--space-2); background: rgba(255,255,255,0.2); border-radius: var(--radius-full); padding: var(--space-2) var(--space-3); font-size: var(--text-xs); font-weight: 700; color: #fff; transition: background var(--transition); }
+    .li-cta:hover { background: rgba(255,255,255,0.35); }
+
+    footer { border-top: 1px solid var(--color-divider); padding: var(--space-6); max-width: 1200px; margin-inline: auto; display: flex; justify-content: space-between; align-items: center; gap: var(--space-4); flex-wrap: wrap; }
+    .footer-copy { font-size: var(--text-xs); color: var(--color-text-faint); }
+    .footer-copy strong { color: var(--color-text-muted); }
+
+    @supports (animation-timeline: scroll()) {
+      .fade-in { opacity: 0; animation: reveal-fade linear both; animation-timeline: view(); animation-range: entry 0% entry 80%; }
+    }
+    @keyframes reveal-fade { to { opacity: 1; } }
+
+    .nav-mobile { display: none; position: fixed; inset: 0; z-index: 200; background: var(--color-surface); flex-direction: column; align-items: center; justify-content: center; gap: var(--space-8); }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a { font-size: var(--text-xl); font-family: var(--font-display); color: var(--color-text); }
+    .nav-mobile-close { position: absolute; top: var(--space-6); right: var(--space-6); font-size: var(--text-xl); color: var(--color-text-muted); }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-photo-wrap { width: 140px; margin-inline: auto; order: -1; }
+      .hero h1, .hero-pitch, .hero-eyebrow { text-align: center; }
+      .hero-pitch { margin-inline: auto; }
+      .hero-actions, .hero-social { justify-content: center; }
+      .bcard-alternance { grid-column: span 6; }
+      .bcard-stats { grid-column: span 6; }
+      .bcard-dispo, .bcard-projects, .bcard-stack, .bcard-exp, .bcard-contact { grid-column: span 12; }
+      .bcard-github { grid-column: span 6; }
+      .bcard-linkedin { grid-column: span 6; }
+      .exp-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .bcard-alternance, .bcard-stats, .bcard-github, .bcard-linkedin { grid-column: span 12; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+    }
+  </style>
+</head>
+<body>
+
+<a href="#main" style="position:absolute;top:-100px;left:1rem;background:var(--color-primary);color:#fff;padding:0.5rem 1rem;border-radius:0.5rem;font-size:0.875rem;transition:top 0.2s;" onfocus="this.style.top='1rem'" onblur="this.style.top='-100px'">Aller au contenu</a>
+
+<div class="nav-mobile" id="mobileNav" role="dialog" aria-modal="true" aria-label="Navigation mobile">
+  <button class="nav-mobile-close" onclick="closeMobileNav()" aria-label="Fermer">✕</button>
+  <a href="#projets" onclick="closeMobileNav()">Projets</a>
+  <a href="#stack" onclick="closeMobileNav()">Stack</a>
+  <a href="#experience" onclick="closeMobileNav()">Expérience</a>
+  <a href="#contact" onclick="closeMobileNav()">Contact</a>
+</div>
+
+<nav aria-label="Navigation principale">
+  <div class="nav-logo">
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+      <rect width="28" height="28" rx="7" fill="currentColor" opacity="0.15"/>
+      <text x="14" y="19" text-anchor="middle" font-family="Georgia,serif" font-size="14" font-weight="700" fill="currentColor">KH</text>
+    </svg>
+    Kabir Hossain
+  </div>
+  <div class="nav-links">
+    <a href="#projets">Projets</a>
+    <a href="#stack">Stack</a>
+    <a href="#experience">Expérience</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="nav-right">
+    <button class="theme-toggle" data-theme-toggle aria-label="Basculer le thème">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+    </button>
+    <a href="mailto:kabir.hossain.trade@gmail.com" class="btn-nav-cta" target="_blank" rel="noopener noreferrer">Me contacter</a>
+    <button class="hamburger" onclick="openMobileNav()" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<main id="main">
+<section class="hero" aria-label="Présentation">
+  <div>
+    <div class="hero-eyebrow">Disponible · Alternance sept. 2026</div>
+    <h1>Développeur <em>IA</em><br>& Impact Business</h1>
+    <p class="hero-pitch">Admis chez Simplon en Développeur IA (sept. 2026), je cherche une alternance de 16 mois. Ex-Head of Sales avec 10 ans d'expérience — j'allie vision ROI et stack IA opérationnelle pour des solutions à fort impact business.</p>
+    <div class="hero-actions">
+      <a href="#projets" class="btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        Voir mes projets
+      </a>
+      <a href="mailto:kabir.hossain.trade@gmail.com" class="btn-secondary" target="_blank" rel="noopener noreferrer">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        M'écrire
+      </a>
+    </div>
+    <div class="hero-social" aria-label="Réseaux sociaux">
+      <a href="https://www.linkedin.com/in/kabirhossaintrade/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+      <a href="https://github.com/kabweb712-hash" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+      </a>
+      <a href="https://linktr.ee/admin" target="_blank" rel="noopener noreferrer" aria-label="Linktree">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      </a>
+    </div>
+  </div>
+  <div class="hero-photo-wrap">
+    <img src="https://res.cloudinary.com/dmvrtqexv/image/upload/v1777889291/Kabir_Hossain-Photoroom_yzq6mr.png" alt="Photo de profil de Kabir Hossain" width="260" height="346" loading="eager">
+  </div>
+</section>
+
+<section class="bento-section" aria-label="Portfolio">
+  <p class="section-label">Portfolio & Compétences</p>
+  <div class="bento-grid">
+
+    <article class="bcard bcard-alternance fade-in">
+      <div class="bcard-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        Alternance
+      </div>
+      <div class="alt-title">Développeur IA<br>Simplon · RNCP niv. 6</div>
+      <div class="alt-sub">Sept. 2026 – Jan. 2028 · 16 mois · Île-de-France</div>
+      <div class="alt-badge">Disponible sept. 2026</div>
+    </article>
+
+    <article class="bcard bcard-stats fade-in">
+      <div class="bcard-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        Chiffres clés
+      </div>
+      <div class="stats-grid">
+        <div class="stat-item"><div class="stat-num">+300%</div><div class="stat-desc">CA réalisé en 3 ans</div></div>
+        <div class="stat-item"><div class="stat-num">10</div><div class="stat-desc">Ans d'expérience commerciale</div></div>
+        <div class="stat-item"><div class="stat-num">3</div><div class="stat-desc">Projets IA déployés</div></div>
+      </div>
+    </article>
+
+    <article class="bcard bcard-dispo fade-in">
+      <div class="bcard-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Disponibilité
+      </div>
+      <div class="dispo-status"><div class="dispo-dot"></div><div class="dispo-text">Disponible</div></div>
+      <div class="dispo-detail">Contrat d'alternance · Rythme entreprise/école flexible</div>
+      <div class="dispo-location">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Île-de-France · Mobilité possible
+      </div>
+    </article>
+
+    <article class="bcard bcard-projects fade-in" id="projets">
+      <div class="bcard-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        Projets IA
+      </div>
+      <div class="projects-list">
+        <div class="project-item">
+          <div class="project-top">
+            <div class="project-name">PredictFlow</div>
+            <a href="https://github.com/kabweb712-hash/predictflow" target="_blank" rel="noopener noreferrer" class="project-link">GitHub <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+          </div>
+          <div class="project-desc">Plateforme MLOps de prédiction de churn sur dataset Telco. Pipeline end-to-end, cas d'usage industriel réel.</div>
+          <div class="project-tags"><span class="tag">Python</span><span class="tag">MLOps</span><span class="tag">ML supervisé</span><span class="tag">GitHub</span></div>
+        </div>
+        <div class="project-item">
+          <div class="project-top"><div class="project-name">OpenClaw — Agent IA sur VPS</div></div>
+          <div class="project-desc">Déploiement d'un agent IA autonome open-source à mémoire persistante sur VPS OVH. Infrastructure cloud configurée en autonomie.</div>
+          <div class="project-tags"><span class="tag">Docker</span><span class="tag">OVH VPS</span><span class="tag">LLM</span><span class="tag">Agentique</span></div>
+        </div>
+        <div class="project-item">
+          <div class="project-top"><div class="project-name">Prototypes d'automatisation</div></div>
+          <div class="project-desc">Pipeline prospection B2B (Python/Apify/n8n), tri de mails (NLP/Mistral), générateur de contenu (Gemini/n8n).</div>
+          <div class="project-tags"><span class="tag">n8n</span><span class="tag">Python</span><span class="tag">NLP</span><span class="tag">Apify</span><span class="tag">LangChain</span></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="bcard bcard-stack fade-in" id="stack">
+      <div class="bcard-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        Stack technique
+      </div>
+      <div class="stack-groups">
+        <div><div class="stack-group-label">IA & Dev</div><div class="stack-chips"><span class="chip highlight">Python</span><span class="chip highlight">LangChain</span><span class="chip">LLM</span><span class="chip">RAG</span><span class="chip">FastAPI</span><span class="chip">Hugging Face</span></div></div>
+        <div><div class="stack-group-label">Automatisation & Data</div><div class="stack-chips"><span class="chip highlight">n8n</span><span class="chip">SQL</span><span class="chip">Pandas</span><span class="chip">Apify</span><span class="chip">Docker</span></div></div>
+        <div><div class="stack-group-label">Cloud & Infra</div><div class="stack-chips"><span class="chip">Google Cloud</span><span class="chip">OVH VPS</span><span class="chip">Git / GitHub</span><span class="chip">API REST</span></div></div>
+        <div><div class="stack-group-label">Business & CRM</div><div class="stack-chips"><span class="chip">HubSpot</span><span class="chip">ERP Samooha</span><span class="chip">Forecasting</span><span class="chip">KPI</span></div></div>
+      </div>
+    </article>
+
+    <article class="bcard bcard-exp fade-in" id="experience">
+      <div class="bcard-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        Expériences
+      </div>
+      <div class="exp-grid">
+        <div class="exp-item">
+          <div class="exp-period">Jan. 2023 – Oct. 2025</div>
+          <div class="exp-role">Responsable Commercial & Achats</div>
+          <div class="exp-company">Miamland.com · Paris · E-commerce B2B FMCG</div>
+          <ul class="exp-results">
+            <li>Capture de 9% de CA via analyse data, segmentation marché et ajustement de l'offre produit</li>
+            <li>Co-développement dashboards et rapports avec l'équipe tech (e-commerce interne)</li>
+            <li>Recrutement et formation de 2 alternants (CRM, négociation, pilotage KPI)</li>
+          </ul>
+        </div>
+        <div class="exp-item">
+          <div class="exp-period">Mai 2019 – Mars 2022</div>
+          <div class="exp-role">Head of Sales</div>
+          <div class="exp-company">Best In Brands Ltd · Dhaka, Bangladesh · Distribution premium</div>
+          <ul class="exp-results">
+            <li>Scaling +300% CA en 3 ans : 300k€ → 1,2M€ (LVMH, Yankee Candle, Barilla)</li>
+            <li>+100% objectifs mensuels × 7 en 2021 — pilotage KPI quotidiens & dashboards</li>
+            <li>Lancement 4 parfumeries + équipe 12 commerciaux avec reporting automatisé</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <article class="bcard bcard-contact fade-in" id="contact">
+      <div class="bcard-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Contact
+      </div>
+      <div class="contact-items">
+        <div class="contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:kabir.hossain.trade@gmail.com" target="_blank" rel="noopener noreferrer">kabir.hossain.trade@gmail.com</a></div>
+        <div class="contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.08 6.08l1.48-.88a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:+33652488566">+33 (0)6 52 48 85 66</a></div>
+        <div class="contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Gretz-Armainvilliers, 77220 · Île-de-France</span></div>
+        <div class="contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><a href="https://linktr.ee/admin" target="_blank" rel="noopener noreferrer">linktr.ee/kabir</a></div>
+      </div>
+    </article>
+
+    <article class="bcard bcard-github fade-in">
+      <div class="github-content">
+        <div class="bcard-label">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          GitHub
+        </div>
+        <div class="github-handle">kabweb712-hash</div>
+        <div class="github-sub">PredictFlow, automatisations, expérimentations IA</div>
+        <a href="https://github.com/kabweb712-hash" target="_blank" rel="noopener noreferrer" class="github-cta">Voir le profil <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+      </div>
+    </article>
+
+    <article class="bcard bcard-linkedin fade-in">
+      <div class="bcard-label">LinkedIn</div>
+      <div class="li-title">Connectons-<br>nous</div>
+      <div class="li-sub">Profil complet & recommandations</div>
+      <a href="https://www.linkedin.com/in/kabirhossaintrade/" target="_blank" rel="noopener noreferrer" class="li-cta">Voir le profil <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+    </article>
+
+  </div>
+</section>
+</main>
+
+<footer>
+  <p class="footer-copy">© 2026 <strong>Kabir Hossain</strong> · Tous droits réservés</p>
+  <p class="footer-copy">Développeur IA · Île-de-France</p>
+</footer>
+
+<script>
+(function(){
+  const t = document.querySelector('[data-theme-toggle]');
+  const r = document.documentElement;
+  let d = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  r.setAttribute('data-theme', d);
+  if(t){ t.addEventListener('click', ()=>{ d=d==='dark'?'light':'dark'; r.setAttribute('data-theme',d); t.innerHTML=d==='dark'?'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>':'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>'; }); }
+})();
+function openMobileNav(){ document.getElementById('mobileNav').classList.add('open'); document.body.style.overflow='hidden'; }
+function closeMobileNav(){ document.getElementById('mobileNav').classList.remove('open'); document.body.style.overflow=''; }
+</script>
+</body>
+</html>
