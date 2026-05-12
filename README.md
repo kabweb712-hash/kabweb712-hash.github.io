@@ -14,7 +14,7 @@
 
 Site portfolio statique présentant :
 
-- Profil Développeur IA & ex-Head of Sales (10 ans d'expérience commerciale)
+- Profil Développeur IA & ex-Head of Sales (+10 ans d'expérience commerciale)
 - Projets en intelligence artificielle (MLOps, agents autonomes, automatisations n8n)
 - Stack technique
 - Expérience professionnelle
