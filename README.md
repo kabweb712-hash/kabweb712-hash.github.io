@@ -1,6 +1,6 @@
 # Portfolio — Kabir Hossain
 
-> Portfolio en ligne de Kabir Hossain — Développeur IA en alternance (sept. 2026).
+> Portfolio en ligne de Kabir Hossain — Développeur IA en alternance chez Novel Conseil & Simplon.
 
 <p align="center">
   <a href="https://kabweb712-hash.github.io/">
@@ -52,10 +52,10 @@ Aucune dépendance, aucun build. Le site fonctionne en ouvrant simplement `index
 
 ## Contact
 
-- 📧 [kabir.hossain.trade@gmail.com](mailto:kabir.hossain.trade@gmail.com)
+- 📧 [kab.hoss.712@gmail.com](mailto:kab.hoss.712@gmail.com)
 - 💼 [LinkedIn](https://www.linkedin.com/in/kabirhossaintrade/)
 - 🌐 [linktr.ee/kabir.hossain.trade](https://linktr.ee/kabir.hossain.trade)
 
 ---
 
-*Disponible pour une alternance 16 mois en Développement IA · Île-de-France · Sept. 2026 – Jan. 2028*
+*Développeur IA en alternance (Simplon) et consultant RPA & IA chez Novel Conseil.*
