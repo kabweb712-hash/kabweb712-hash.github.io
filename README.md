@@ -52,7 +52,7 @@ Aucune dépendance, aucun build. Le site fonctionne en ouvrant simplement `index
 
 ## Contact
 
-- 📧 [kabir.hossain.trade@gmail.com](mailto:kabir.hossain.trade@gmail.com)
+- 📧 [kab.hoss.712@gmail.com](mailto:kab.hoss.712@gmail.com)
 - 💼 [LinkedIn](https://www.linkedin.com/in/kabirhossaintrade/)
 - 🌐 [linktr.ee/kabir.hossain.trade](https://linktr.ee/kabir.hossain.trade)
 
